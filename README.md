@@ -26,7 +26,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ? | ? | ? ||
 |`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token.  | Script to be found at [FuzzySecurity](https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1) |
-|`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? |Privilege name broken to make the column narrow.|
+|`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? | Privilege name broken to make the column narrow. |
 |`SeEnableDelegation`| ? | ? | ? ||
 |`SeImpersonate`| ? | ? | ? ||
 |`SeIncreaseBasePriority`| ? | ? | ? ||
@@ -35,7 +35,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeLoadDriver`| ? | ? | ? ||
 |`SeLockMemory`| ? | ? | ? ||
 |`SeMachineAccount`| ? | ? | ? ||
-|`SeManageVolume`| **Threat** | 3rd party tool | Create large file and manipulate the valid data length with `SetFileValidData()`. Effectively the data from deleted files should be visible inside the file. | Files smaller than ~700B fit entirely within MFT entries and will not expose the content with such method. |
+|`SeManageVolume`| **Threat** | 3rd party tool | Create large file and manipulate the valid data length with [`SetFileValidData()`](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfilevaliddata). Effectively the data from deleted files should be visible inside the file. | Files smaller than ~700B fit entirely within MFT entries and will not expose the content with such method. |
 |`SeProfileSingleProcess`| ? | ? | ? ||
 |`SeRelabel`| ? | ? | ? ||
 |`SeRemoteShutdown`| ? | ? | ? ||

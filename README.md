@@ -8,8 +8,8 @@ Privileges are listed and explained at: https://docs.microsoft.com/en-us/windows
 
 If the goal can be achived multiple ways, the priority is
 1. Using built-in commands
-2. Using PowerShell
-3. Using non-OS tools not reported by VirusTotal
+2. Using PowerShell (only if a working script exists)
+3. Using non-OS tools
 4. Using any other method
 
 Feel free to contribute and/or discuss presented ideas.
@@ -25,7 +25,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ? | ? | ? ||
-|`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token. |Good link anyone?|
+|`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token. |https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1|
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? |Privilege name broken to make the column narrow.|
 |`SeEnableDelegation`| ? | ? | ? ||
 |`SeImpersonate`| ? | ? | ? ||
@@ -35,7 +35,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeLoadDriver`| ? | ? | ? ||
 |`SeLockMemory`| ? | ? | ? ||
 |`SeMachineAccount`| ? | ? | ? ||
-|`SeManageVolume`| ? | ? | ? ||
+|`SeManageVolume`| **Threat** | 3rd party tool | Create large file and manipulate the valid data length with `SetFileValidData()`. Effectively the data from deleted files should be visible inside the file. | Files smaller than ~700B fit entirely within MFT entries and will not expose the content with such method. |
 |`SeProfileSingleProcess`| ? | ? | ? ||
 |`SeRelabel`| ? | ? | ? ||
 |`SeRemoteShutdown`| ? | ? | ? ||

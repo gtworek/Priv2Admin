@@ -1,5 +1,5 @@
 The idea is to "translate" Windows OS privileges to a path leading to:
-1. localadmin,
+1. administrator,
 2. integrity and/or confidentiality threat,
 3. availability threat,
 4. just a mess.
@@ -25,7 +25,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ? | ? | ? ||
-|`SeDebug`| ***Localadmin*** | **PowerShell** | Duplicate the `lsass.exe` token. |Good link anyone?|
+|`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token. |Good link anyone?|
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? |Privilege name broken to make the column narrow.|
 |`SeEnableDelegation`| ? | ? | ? ||
 |`SeImpersonate`| ? | ? | ? ||
@@ -41,14 +41,14 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeRemoteShutdown`| ? | ? | ? ||
 |`SeRestore`| ? | ? | ? ||
 |`SeSecurity`| ? | ? | ? ||
-|`SeShutdown`| Availability | ***Built-in commands*** | `shutdown.exe` |May be more interesting on servers, especially on Terminal Services.|
+|`SeShutdown`| Availability | ***Built-in commands*** | `shutdown.exe /s /f /t 1` |May be more interesting on servers.|
 |`SeSyncAgent`| ? | ? | ? ||
 |`SeSystemEnvironment`| ? | ? | ? ||
 |`SeSystemProfile`| ? | ? | ? ||
 |`SeSystemtime`| ? | ? | ? ||
 |`SeTakeOwnership`| ? | ? | ? ||
-|`SeTcb`| ? | ? | ? ||
-|`SeTimeZone`| ? | ? | ? ||
+|`SeTcb`| ***Admin*** | 3rd party tool | Create arbitrary token with local admin rights, use it to start cmd.exe, create new user, add new user to administrators. ||
+|`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
 |`SeTrustedCredManAccess`| ? | ? | ? ||
 |`SeUndock`| ? | ? | ? ||
 |`SeUnsolicitedInput`| ? | ? | ? ||

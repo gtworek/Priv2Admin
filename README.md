@@ -13,41 +13,41 @@ If the goal can be achived multiple ways, the priority is
 
 Feel free to contribute and/or discuss presented ideas.
 
-| Privilege | Impact | Execution path | Remarks |
-| --- | --- | --- | --- |
-|`SeAssignPrimaryTokenPrivilege`| ? | ? ||
-|`SeAuditPrivilege`| ? | ? ||
-|`SeBackupPrivilege`| ? | ? ||
-|`SeChangeNotifyPrivilege`| ? | ? ||
-|`SeCreateGlobalPrivilege`| ? | ? ||
-|`SeCreatePagefilePrivilege`| ? | ? ||
-|`SeCreatePermanentPrivilege`| ? | ? ||
-|`SeCreateSymbolicLinkPrivilege`| ? | ? ||
-|`SeCreateTokenPrivilege`| ? | ? ||
-|`SeDebugPrivilege`| ? | ? ||
-|`SeDelegateSessionUserImpersonatePrivilege`| ? | ? ||
-|`SeEnableDelegationPrivilege`| ? | ? ||
-|`SeImpersonatePrivilege`| ? | ? ||
-|`SeIncreaseBasePriorityPrivilege`| ? | ? ||
-|`SeIncreaseQuotaPrivilege`| ? | ? ||
-|`SeIncreaseWorkingSetPrivilege`| ? | ? ||
-|`SeLoadDriverPrivilege`| ? | ? ||
-|`SeLockMemoryPrivilege`| ? | ? ||
-|`SeMachineAccountPrivilege`| ? | ? ||
-|`SeManageVolumePrivilege`| ? | ? ||
-|`SeProfileSingleProcessPrivilege`| ? | ? ||
-|`SeRelabelPrivilege`| ? | ? ||
-|`SeRemoteShutdownPrivilege`| ? | ? ||
-|`SeRestorePrivilege`| ? | ? ||
-|`SeSecurityPrivilege`| ? | ? ||
-|`SeShutdownPrivilege`| ? | ? ||
-|`SeSyncAgentPrivilege`| ? | ? ||
-|`SeSystemEnvironmentPrivilege`| ? | ? ||
-|`SeSystemProfilePrivilege`| ? | ? ||
-|`SeSystemtimePrivilege`| ? | ? ||
-|`SeTakeOwnershipPrivilege`| ? | ? ||
-|`SeTcbPrivilege`| ? | ? ||
-|`SeTimeZonePrivilege`| ? | ? ||
-|`SeTrustedCredManAccessPrivilege`| ? | ? ||
-|`SeUndockPrivilege`| ? | ? ||
-|`SeUnsolicitedInputPrivilege`| ? | ? ||
+| Privilege | Impact | Tool | Execution path | Remarks |
+| --- | --- | --- | --- | --- |
+|`SeAssignPrimaryToken`| ? | ? | ? ||
+|`SeAudit`| **Threat** | ***Built-in commands*** |- Clean Security event log: `wevtutil cl Security`<br> <br>- Shrink the Security log to 20MB to make events flushed soon: `wevtutil sl Security /ms:0` |Writing own events is possible with AuthzReportSecurityEvent API called from PowerShell|
+|`SeBackup`| **Threat** | ***Built-in commands*** | Read sensitve files with `robocopy /b` |- May be more interesting if you can read %WINDIR%\MEMORY.DMP<br> <br>- SeBackupPrivilege (and robocopy) is not helpful when it comes to open files.|
+|`SeChangeNotify`| ? | ? | ? ||
+|`SeCreateGlobal`| ? | ? | ? ||
+|`SeCreatePagefile`| ? | ? | ? ||
+|`SeCreatePermanent`| ? | ? | ? ||
+|`SeCreateSymbolicLink`| ? | ? | ? ||
+|`SeCreateToken`| ? | ? | ? ||
+|`SeDebug`| ? | ? | ? ||
+|`SeDelegateSessionUserImpersonate`| ? | ? | ? ||
+|`SeEnableDelegation`| ? | ? | ? ||
+|`SeImpersonate`| ? | ? | ? ||
+|`SeIncreaseBasePriority`| ? | ? | ? ||
+|`SeIncreaseQuota`| ? | ? | ? ||
+|`SeIncreaseWorkingSet`| ? | ? | ? ||
+|`SeLoadDriver`| ? | ? | ? ||
+|`SeLockMemory`| ? | ? | ? ||
+|`SeMachineAccount`| ? | ? | ? ||
+|`SeManageVolume`| ? | ? | ? ||
+|`SeProfileSingleProcess`| ? | ? | ? ||
+|`SeRelabel`| ? | ? | ? ||
+|`SeRemoteShutdown`| ? | ? | ? ||
+|`SeRestore`| ? | ? | ? ||
+|`SeSecurity`| ? | ? | ? ||
+|`SeShutdown`| ? | ? | ? ||
+|`SeSyncAgent`| ? | ? | ? ||
+|`SeSystemEnvironment`| ? | ? | ? ||
+|`SeSystemProfile`| ? | ? | ? ||
+|`SeSystemtime`| ? | ? | ? ||
+|`SeTakeOwnership`| ? | ? | ? ||
+|`SeTcb`| ? | ? | ? ||
+|`SeTimeZone`| ? | ? | ? ||
+|`SeTrustedCredManAccess`| ? | ? | ? ||
+|`SeUndock`| ? | ? | ? ||
+|`SeUnsolicitedInput`| ? | ? | ? ||

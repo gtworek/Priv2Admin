@@ -1,7 +1,8 @@
 The idea is to "translate" Windows OS privileges to a path leading to:
 1. localadmin,
-2. some other security threat,
-3. just a mess.
+2. integrity and/or confidentiality threat,
+3. availability threat,
+4. just a mess.
 
 Privileges are listed and explained at: https://docs.microsoft.com/en-us/windows/win32/secauthz/privilege-constants
 
@@ -24,7 +25,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ? | ? | ? ||
-|`SeDebug`| ? | ? | ? ||
+|`SeDebug`| ***Localadmin*** | **PowerShell** | Duplicate the `lsass.exe` token. |Good link anyone?|
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? |Privilege name broken to make the column narrow.|
 |`SeEnableDelegation`| ? | ? | ? ||
 |`SeImpersonate`| ? | ? | ? ||
@@ -40,7 +41,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeRemoteShutdown`| ? | ? | ? ||
 |`SeRestore`| ? | ? | ? ||
 |`SeSecurity`| ? | ? | ? ||
-|`SeShutdown`| ? | ? | ? ||
+|`SeShutdown`| Availability | ***Built-in commands*** | `shutdown.exe` |May be more interesting on servers, especially on Terminal Services.|
 |`SeSyncAgent`| ? | ? | ? ||
 |`SeSystemEnvironment`| ? | ? | ? ||
 |`SeSystemProfile`| ? | ? | ? ||

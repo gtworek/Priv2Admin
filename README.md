@@ -25,7 +25,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ? | ? | ? ||
-|`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token.  |https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1 |
+|`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token.  | Script to be found at [FuzzySecurity](https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1) |
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? |Privilege name broken to make the column narrow.|
 |`SeEnableDelegation`| ? | ? | ? ||
 |`SeImpersonate`| ? | ? | ? ||

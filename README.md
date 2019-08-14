@@ -19,7 +19,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeAssignPrimaryToken`| ? | ? | ? ||
 |`SeAudit`| **Threat** | ***Built-in commands*** |- Clear Security event log: `wevtutil cl Security`<br> <br>- Shrink the Security log to 20MB to make events flushed soon: `wevtutil sl Security /ms:0` |Writing own events is possible with [`AuthzReportSecurityEvent`](https://docs.microsoft.com/en-us/windows/win32/api/authz/nf-authz-authzreportsecurityevent) API. |
 |`SeBackup`| **Threat** | ***Built-in commands*** | Read sensitve files with `robocopy /b` |- May be more interesting if you can read %WINDIR%\MEMORY.DMP<br> <br>- `SeBackupPrivilege` (and robocopy) is not helpful when it comes to open files.<br> <br>- Robocopy requires both SeBackup and SeRestore to work with /b parameter. |
-|`SeChangeNotify`| ? | ? | ? ||
+|`SeChangeNotify`| - | - | - | Privilege held by everyone. Revoking it may make the OS (Windows Server 2019) unbootable. |
 |`SeCreateGlobal`| ? | ? | ? ||
 |`SeCreatePagefile`| ? | ? | ? ||
 |`SeCreatePermanent`| ? | ? | ? ||

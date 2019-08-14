@@ -37,7 +37,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeMachineAccount`| ? | ? | ? ||
 |`SeManageVolume`| **Threat** | 3rd party tool | Create large file and manipulate the valid data length with [`SetFileValidData()`](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfilevaliddata). Effectively the data from deleted files should be visible inside the file. | Files smaller than ~700B fit entirely within MFT entries and will not expose the content with such method. |
 |`SeProfileSingleProcess`| ? | ? | ? ||
-|`SeRelabel`| ? | ? | ? ||
+|`SeRelabel`| **Threat** | 3rd party tool | Modification of system files by a legitimate administrator? | See: [MIC documentation](https://docs.microsoft.com/en-us/windows/win32/secauthz/mandatory-integrity-control)<br> <br> Integrity labels are infrequently used on top of standard ACLs. Two main scenarios include:<br>- protection against attacks using exploitable applications such as browsers, PDF readers etc.<br>- protection of OS files.<br> <br>Attacks with SeRelabel must obey access rules defined by ACLs, which makes them significantly less useful in practice.|
 |`SeRemoteShutdown`| ? | ? | ? ||
 |`SeRestore`| ? | ? | ? ||
 |`SeSecurity`| ? | ? | ? ||

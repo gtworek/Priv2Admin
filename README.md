@@ -25,7 +25,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ? | ? | ? ||
 |`SeDebug`| ? | ? | ? ||
-|`SeDelegateSessionUserImpersonate`| ? | ? | ? ||
+|`SeDelegateSession-<br>UserImpersonate`| ? | ? | ? |Privilege name broken to make the column narrow.|
 |`SeEnableDelegation`| ? | ? | ? ||
 |`SeImpersonate`| ? | ? | ? ||
 |`SeIncreaseBasePriority`| ? | ? | ? ||

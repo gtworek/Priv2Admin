@@ -17,15 +17,15 @@ Feel free to contribute and/or discuss presented ideas.
 | Privilege | Impact | Tool | Execution path | Remarks |
 | --- | --- | --- | --- | --- |
 |`SeAssignPrimaryToken`| ? | ? | ? ||
-|`SeAudit`| **Threat** | ***Built-in commands*** |- Clean Security event log: `wevtutil cl Security`<br> <br>- Shrink the Security log to 20MB to make events flushed soon: `wevtutil sl Security /ms:0` |Writing own events is possible with AuthzReportSecurityEvent API called from PowerShell|
-|`SeBackup`| **Threat** | ***Built-in commands*** | Read sensitve files with `robocopy /b` |- May be more interesting if you can read %WINDIR%\MEMORY.DMP<br> <br>- SeBackupPrivilege (and robocopy) is not helpful when it comes to open files.|
+|`SeAudit`| **Threat** | ***Built-in commands*** |- Clean Security event log: `wevtutil cl Security`<br> <br>- Shrink the Security log to 20MB to make events flushed soon: `wevtutil sl Security /ms:0` |Writing own events is possible with AuthzReportSecurityEvent API. |
+|`SeBackup`| **Threat** | ***Built-in commands*** | Read sensitve files with `robocopy /b` |- May be more interesting if you can read %WINDIR%\MEMORY.DMP<br> <br>- `SeBackupPrivilege` (and robocopy) is not helpful when it comes to open files.<br> <br>- Robocopy requires both SeBackup and SeRestore to work with /b parameter. |
 |`SeChangeNotify`| ? | ? | ? ||
 |`SeCreateGlobal`| ? | ? | ? ||
 |`SeCreatePagefile`| ? | ? | ? ||
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ? | ? | ? ||
-|`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token. |https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1|
+|`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token.  |https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1 |
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? |Privilege name broken to make the column narrow.|
 |`SeEnableDelegation`| ? | ? | ? ||
 |`SeImpersonate`| ? | ? | ? ||

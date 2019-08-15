@@ -12,7 +12,7 @@ If the goal can be achived multiple ways, the priority is
 3. Using non-OS tools
 4. Using any other method
 
-You can check your own privileges with `whoami /priv`. Disabled privileged is as good as the enabled one. The only important thing is if you have the privilege on the list or not.
+You can check your own privileges with `whoami /priv`. Disabled privileges are as good as enabled ones. The only important thing is if you have the privilege on the list or not.
 
 Feel free to contribute and/or discuss presented ideas.
 

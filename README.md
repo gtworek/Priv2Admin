@@ -17,7 +17,7 @@ Feel free to contribute and/or discuss presented ideas.
 | Privilege | Impact | Tool | Execution path | Remarks |
 | --- | --- | --- | --- | --- |
 |`SeAssignPrimaryToken`| ? | ? | ? ||
-|`SeAudit`| **Threat** | ***Built-in commands*** |- Clear Security event log: `wevtutil cl Security`<br> <br>- Shrink the Security log to 20MB to make events flushed soon: `wevtutil sl Security /ms:0` |Writing own events is possible with [`AuthzReportSecurityEvent`](https://docs.microsoft.com/en-us/windows/win32/api/authz/nf-authz-authzreportsecurityevent) API. |
+|`SeAudit`| **Threat** | 3rd party tool | Write events to the Security event log to fool auditing or to overwrite old events. |Writing own events is possible with [`AuthzReportSecurityEvent`](https://docs.microsoft.com/en-us/windows/win32/api/authz/nf-authz-authzreportsecurityevent) API. |
 |`SeBackup`| **Threat** | ***Built-in commands*** | Read sensitve files with `robocopy /b` |- May be more interesting if you can read %WINDIR%\MEMORY.DMP<br> <br>- `SeBackupPrivilege` (and robocopy) is not helpful when it comes to open files.<br> <br>- Robocopy requires both SeBackup and SeRestore to work with /b parameter. |
 |`SeChangeNotify`| - | - | - | Privilege held by everyone. Revoking it may make the OS (Windows Server 2019) unbootable. |
 |`SeCreateGlobal`| ? | ? | ? ||
@@ -40,7 +40,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeRelabel`| **Threat** | 3rd party tool | Modification of system files by a legitimate administrator? | See: [MIC documentation](https://docs.microsoft.com/en-us/windows/win32/secauthz/mandatory-integrity-control)<br> <br> Integrity labels are infrequently used and work only on top of standard ACLs. Two main scenarios include:<br>- protection against attacks using exploitable applications such as browsers, PDF readers etc.<br>- protection of OS files.<br> <br>Attacks with SeRelabel must obey access rules defined by ACLs, which makes them significantly less useful in practice.|
 |`SeRemoteShutdown`| ? | ? | ? ||
 |`SeRestore`| ***Admin*** | 3rd party tool | Critical OS file replacement. | To be investigated. Fully reproductible path needs to be tested, but I did it.|
-|`SeSecurity`| ? | ? | ? ||
+|`SeSecurity`| **Threat** | ***Built-in commands*** |- Clear Security event log: `wevtutil cl Security`<br> <br>- Shrink the Security log to 20MB to make events flushed soon: `wevtutil sl Security /ms:0`<br> <br>- Read Security event log to have knowledge about processes, access and actions of other users within the system.<br> <br>- Knowing what is logged to act under the radar.<br> <br>- Knowing what is logged to generate large number of events effectively purging old ones without leaving obvious evidence of cleaning. ||
 |`SeShutdown`| Availability | ***Built-in commands*** | `shutdown.exe /s /f /t 1` |May be more interesting on servers.|
 |`SeSyncAgent`| ? | ? | ? ||
 |`SeSystemEnvironment`| ? | ? | ? ||

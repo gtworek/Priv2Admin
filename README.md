@@ -39,7 +39,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeProfileSingleProcess`| ? | ? | ? ||
 |`SeRelabel`| **Threat** | 3rd party tool | Modification of system files by a legitimate administrator? | See: [MIC documentation](https://docs.microsoft.com/en-us/windows/win32/secauthz/mandatory-integrity-control)<br> <br> Integrity labels are infrequently used on top of standard ACLs. Two main scenarios include:<br>- protection against attacks using exploitable applications such as browsers, PDF readers etc.<br>- protection of OS files.<br> <br>Attacks with SeRelabel must obey access rules defined by ACLs, which makes them significantly less useful in practice.|
 |`SeRemoteShutdown`| ? | ? | ? ||
-|`SeRestore`| ? | ? | ? ||
+|`SeRestore`| ***Admin*** | 3rd party tool | Critical OS file replacement. | To be investigated. Fully reproductible path needs to be tested, but I did it.|
 |`SeSecurity`| ? | ? | ? ||
 |`SeShutdown`| Availability | ***Built-in commands*** | `shutdown.exe /s /f /t 1` |May be more interesting on servers.|
 |`SeSyncAgent`| ? | ? | ? ||

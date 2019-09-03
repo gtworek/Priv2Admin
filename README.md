@@ -26,7 +26,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreatePagefile`| ? | ? | ? ||
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
-|`SeCreateToken`| ? | ? | ? ||
+|`SeCreateToken`| ***Admin*** | 3rd party tool | Create arbitrary token including local admin rights with `NtCreateToken`, use it to start a new process and take control over OS. ||
 |`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token.  | Script to be found at [FuzzySecurity](https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1) |
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? | Privilege name broken to make the column narrow. |
 |`SeEnableDelegation`| ? | ? | ? ||
@@ -49,7 +49,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeSystemProfile`| ? | ? | ? ||
 |`SeSystemtime`| ? | ? | ? ||
 |`SeTakeOwnership`| ? | ? | ? ||
-|`SeTcb`| ***Admin*** | 3rd party tool | Create arbitrary token with local admin rights, use it to start cmd.exe, create new user, add new user to administrators. ||
+|`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included, start new process with such token and take control over OS. ||
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
 |`SeTrustedCredManAccess`| ? | ? | ? ||
 |`SeUndock`| ? | ? | ? ||

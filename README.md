@@ -14,6 +14,8 @@ If the goal can be achived multiple ways, the priority is
 
 You can check your own privileges with `whoami /priv`. Disabled privileges are as good as enabled ones. The only important thing is if you have the privilege on the list or not.
 
+**Note 1:** Whenever the attack path ends with a token creation, you can assume the next step is to create new process using such token and then take control over OS.
+
 Feel free to contribute and/or discuss presented ideas.
 
 | Privilege | Impact | Tool | Execution path | Remarks |
@@ -26,7 +28,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreatePagefile`| ? | ? | ? ||
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
-|`SeCreateToken`| ***Admin*** | 3rd party tool | Create arbitrary token including local admin rights with `NtCreateToken`, use it to start a new process and take control over OS. ||
+|`SeCreateToken`| ***Admin*** | 3rd party tool | Create arbitrary token including local admin rights with `NtCreateToken`. ||
 |`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token.  | Script to be found at [FuzzySecurity](https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1) |
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? | Privilege name broken to make the column narrow. |
 |`SeEnableDelegation`| ? | ? | ? ||
@@ -49,7 +51,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeSystemProfile`| ? | ? | ? ||
 |`SeSystemtime`| ? | ? | ? ||
 |`SeTakeOwnership`| ? | ? | ? ||
-|`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included, start new process with such token and take control over OS. ||
+|`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. May require SeImpersonate, to be verified. ||
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
 |`SeTrustedCredManAccess`| ? | ? | ? ||
 |`SeUndock`| ? | ? | ? ||

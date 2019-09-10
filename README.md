@@ -51,7 +51,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeSystemProfile`| ? | ? | ? ||
 |`SeSystemtime`| ? | ? | ? ||
 |`SeTakeOwnership`| ? | ? | ? ||
-|`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. May require SeImpersonate, to be verified. ||
+|`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. May require SeImpersonate.<br> <br>To be verified. ||
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
 |`SeTrustedCredManAccess`| ? | ? | ? ||
 |`SeUndock`| ? | ? | ? ||

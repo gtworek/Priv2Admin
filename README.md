@@ -16,7 +16,7 @@ You can check your own privileges with `whoami /priv`. Disabled privileges are a
 
 **Note 1:** Whenever the attack path ends with a token creation, you can assume the next step is to create new process using such token and then take control over OS.
 
-**Note 2:**<br> **a.** For calling `NtQuerySystemInformation()`/`ZwQuerySystemInformation()` directly, you can find required privileges [here](https://github.com/gtworek/Priv2Admin/blob/master/NtSetSystemInformation.md).<br> **b.** For `NtSetSystemInformation()`/`ZwSetSystemInformation()` required privileges are listed here [here](https://github.com/gtworek/Priv2Admin/blob/master/NtSetSystemInformation.md).
+**Note 2:**<br> **a.** For calling `NtQuerySystemInformation()`/`ZwQuerySystemInformation()` directly, you can find required privileges [here](https://github.com/gtworek/Priv2Admin/blob/master/NtQuerySystemInformation.md).<br> **b.** For `NtSetSystemInformation()`/`ZwSetSystemInformation()` required privileges are listed here [here](https://github.com/gtworek/Priv2Admin/blob/master/NtSetSystemInformation.md).
 
 Feel free to contribute and/or discuss presented ideas.
 

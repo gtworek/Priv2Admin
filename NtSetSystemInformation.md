@@ -1,4 +1,4 @@
-List of privileges required for[`NtSetSystemInformation()` calls:
+List of privileges required for `NtSetSystemInformation()` calls:
 
 | SystemInformationClass | Privilege | Remarks |
 | --- | --- | --- |

@@ -57,4 +57,4 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
 |`SeTrustedCredManAccess`| ? | ? | ? ||
 |`SeUndock`| ? | ? | ? ||
-|`SeUnsolicitedInput`| ? | ? | ? ||
+|`SeUnsolicitedInput`| None | | |The privilege is not used in the Windows OS.|

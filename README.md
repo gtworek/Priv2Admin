@@ -57,5 +57,5 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. May require SeImpersonate.<br> <br>To be verified. ||
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
 |`SeTrustedCredManAccess`| ? | ? | ? ||
-|`SeUndock`| ? | ? | ? ||
-|`SeUnsolicitedInput`| None | | |The privilege is not used in the Windows OS.|
+|`SeUndock`| None | | | The privilege is enabled when undocking, but never observed it checked to grant/deny access. In practice it means it is actually unused and cannot lead to any escalation. |
+|`SeUnsolicitedInput`| None | | | The privilege is not used in the Windows OS. |

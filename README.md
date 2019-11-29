@@ -35,13 +35,13 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeCreateToken`| ***Admin*** | 3rd party tool | Create arbitrary token including local admin rights with `NtCreateToken`. ||
 |`SeDebug`| ***Admin*** | **PowerShell** | Duplicate the `lsass.exe` token.  | Script to be found at [FuzzySecurity](https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Conjure-LSASS.ps1) |
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? | Privilege name broken to make the column narrow. |
-|`SeEnableDelegation`| None | - | - |The privilege is not used in the Windows OS. |
+|`SeEnableDelegation`| None | - | - | The privilege is not used in the Windows OS. |
 |`SeImpersonate`| ? | ? | ? ||
 |`SeIncreaseBasePriority`| ? | ? | ? ||
 |`SeIncreaseQuota`| ? | ? | ? ||
 |`SeIncreaseWorkingSet`| ? | ? | ? ||
 |`SeLoadDriver`| ? | ? | ? ||
-|`SeLockMemory`| ? | ? | ? ||
+|`SeLockMemory`| None | - | - | The privilege allows to mark memory pages to be paged (swapped) later than others. Additionally, it is verified when new memory partition is created with `NtCreatePartition()`. Of course, you can affect availability by taking too much memory (it is enough to open huge pic in mspaint) but it will have the same effect regardless locking pages or not. This permission does allow you to do anything you cannot achieve anyway. |
 |`SeMachineAccount`| None | - | - |The privilege is not used in the Windows OS. |
 |`SeManageVolume`| **Threat** | 3rd party tool | Create large file and manipulate the valid data length with [`SetFileValidData()`](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfilevaliddata). Effectively the data from deleted files should be visible inside the file. |- Files smaller than ~700B fit entirely within MFT entries and will not expose the content with such method.<br>- It looks like the privilege allows to manipulate with mbr, which may lead to some availability issues. To be investigated. |
 |`SeProfileSingleProcess`| ? | ? | ? ||

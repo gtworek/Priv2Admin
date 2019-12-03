@@ -54,7 +54,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeSyncAgent`| None | - | - |The privilege is not used in the Windows OS. |
 |`SeSystemEnvironment`| _Unknown_ | 3rd party tool | The privilege permits to use `NtSetSystemEnvironmentValue`, `NtModifyDriverEntry` and some other syscalls to manipulate UEFI variables. |- Firmware environment variables were commonly used on non-Intel platforms in the past, and now slowly return to UEFI world. <br>- The area is highly undocumented.<br>- The potential may be huge (i.e. breaking Secure Boot) but raising the impact level requires at least PoC. |
 |`SeSystemProfile`| ? | ? | ? ||
-|`SeSystemtime`| ? | ? | ? ||
+|`SeSystemtime`| **Threat** | ***Built-in commands*** | `cmd.exe /c date 01-01-01`<br>`cmd.exe /c time 00:00` | The privilege allows to change the system time, potentially leading to audit trail integrity issues, as events will be stored with wrong date/time.<br>- Be careful with date/time formats. Use always-safe values if not sure.<br>- Sometimes the name of the privilege uses uppercase "T" and is referred as `SeSystemTime`. |
 |`SeTakeOwnership`| ***Admin*** | ***Built-in commands*** |1. `takeown.exe /f "%windir%\system32"`<br>2. `icalcs.exe "%windir%\system32" /grant "%username%":F`<br>3. Rename cmd.exe to utilman.exe<br>4. Lock the console and press Win+U| Attack may be detected by some AV software.<br> <br>Alternative method relies on replacing service binaries stored in "Program Files" using the same privilege. |
 |`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. May require SeImpersonate.<br> <br>To be verified. ||
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||

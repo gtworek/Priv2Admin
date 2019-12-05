@@ -39,7 +39,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeImpersonate`| ? | ? | ? ||
 |`SeIncreaseBasePriority`| ? | ? | ? ||
 |`SeIncreaseQuota`| Availability | 3rd party tool | Change cpu, memory, and cache limits to some values making the OS unbootable. | - Quotas are not checked in the safe mode, which makes repair relatively easy.<br> - The same privilege is used for managing registry quotas. |
-|`SeIncreaseWorkingSet`| ? | ? | ? ||
+|`SeIncreaseWorkingSet`| None | - | - | Privilege held by everyone. Checked when calling fine-tuning memory management functions. |
 |`SeLoadDriver`| ***Admin*** | 3rd party tool | 1. Load buggy kernel driver such as `szkg64.sys`<br>2. Exploit the driver vulnerability<br> <br> Alternatively, the privilege may be used to unload security-related drivers with `ftlMC` builtin command. i.e.: `fltMC sysmondrv` | 1. The `szkg64` vulnerability is listed as [CVE-2018-15732](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15732)<br>2. The `szkg64` [exploit code](https://www.greyhathacker.net/?p=1025) was created by [Parvez Anwar](https://twitter.com/parvezghh)  |
 |`SeLockMemory`| None | - | - | The privilege allows to mark memory pages to be paged (swapped) later than others. Additionally, it is verified when memory partitioning operations are performed. Of course, you can affect availability by taking too much memory (it is enough to open huge pic in mspaint) but it will have the same effect regardless locking pages or not. This permission does allow you to do anything you cannot achieve anyway. |
 |`SeMachineAccount`| None | - | - |The privilege is not used in the Windows OS. |

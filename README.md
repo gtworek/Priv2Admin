@@ -37,7 +37,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeDelegateSession-`<br>`UserImpersonate`| ? | ? | ? | Privilege name broken to make the column narrow. |
 |`SeEnableDelegation`| None | - | - | The privilege is not used in the Windows OS. |
 |`SeImpersonate`| ? | ? | ? ||
-|`SeIncreaseBasePriority`| ? | ? | ? ||
+|`SeIncreaseBasePriority`| Availability | ***Built-in commands*** | `start /realtime SomeCpuIntensiveApp.exe` | May be more interesting on servers. |
 |`SeIncreaseQuota`| Availability | 3rd party tool | Change cpu, memory, and cache limits to some values making the OS unbootable. | - Quotas are not checked in the safe mode, which makes repair relatively easy.<br> - The same privilege is used for managing registry quotas. |
 |`SeIncreaseWorkingSet`| None | - | - | Privilege held by everyone. Checked when calling fine-tuning memory management functions. |
 |`SeLoadDriver`| ***Admin*** | 3rd party tool | 1. Load buggy kernel driver such as `szkg64.sys`<br>2. Exploit the driver vulnerability<br> <br> Alternatively, the privilege may be used to unload security-related drivers with `ftlMC` builtin command. i.e.: `fltMC sysmondrv` | 1. The `szkg64` vulnerability is listed as [CVE-2018-15732](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15732)<br>2. The `szkg64` [exploit code](https://www.greyhathacker.net/?p=1025) was created by [Parvez Anwar](https://twitter.com/parvezghh)  |

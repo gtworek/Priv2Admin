@@ -29,7 +29,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeBackup`| **Threat** | ***Built-in commands*** | Read sensitve files with `robocopy /b` |- May be more interesting if you can read %WINDIR%\MEMORY.DMP<br> <br>- `SeBackupPrivilege` (and robocopy) is not helpful when it comes to open files.<br> <br>- Robocopy requires both SeBackup and SeRestore to work with /b parameter. |
 |`SeChangeNotify`| None | - | - | Privilege held by everyone. Revoking it may make the OS (Windows Server 2019) unbootable. |
 |`SeCreateGlobal`| ? | ? | ? ||
-|`SeCreatePagefile`| ? | ? | ? ||
+|`SeCreatePagefile`| None | ***Built-in commands***  | Create hiberfil.sys, read it offline, look for sensitive data. | Requires offline access, which leads to admin rights anyway. |
 |`SeCreatePermanent`| ? | ? | ? ||
 |`SeCreateSymbolicLink`| ? | ? | ? ||
 |`SeCreateToken`| ***Admin*** | 3rd party tool | Create arbitrary token including local admin rights with `NtCreateToken`. ||

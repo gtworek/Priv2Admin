@@ -56,7 +56,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeSystemProfile`| ? | ? | ? ||
 |`SeSystemtime`| **Threat** | ***Built-in commands*** | `cmd.exe /c date 01-01-01`<br>`cmd.exe /c time 00:00` | The privilege allows to change the system time, potentially leading to audit trail integrity issues, as events will be stored with wrong date/time.<br>- Be careful with date/time formats. Use always-safe values if not sure.<br>- Sometimes the name of the privilege uses uppercase "T" and is referred as `SeSystemTime`. |
 |`SeTakeOwnership`| ***Admin*** | ***Built-in commands*** |1. `takeown.exe /f "%windir%\system32"`<br>2. `icalcs.exe "%windir%\system32" /grant "%username%":F`<br>3. Rename cmd.exe to utilman.exe<br>4. Lock the console and press Win+U| Attack may be detected by some AV software.<br> <br>Alternative method relies on replacing service binaries stored in "Program Files" using the same privilege. |
-|`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. May require SeImpersonate.<br> <br>To be verified. ||
+|`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. | Sample code+exe creating arbitrary tokens to be found at [PsBits](https://github.com/gtworek/PSBits/tree/master/VirtualAccounts). |
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
 |`SeTrustedCredManAccess`| ? | ? | ? ||
 |`SeUndock`| None | - | - | The privilege is enabled when undocking, but never observed it checked to grant/deny access. In practice it means it is actually unused and cannot lead to any escalation. |

@@ -58,7 +58,7 @@ Feel free to contribute and/or discuss presented ideas.
 |`SeTakeOwnership`| ***Admin*** | ***Built-in commands*** |1. `takeown.exe /f "%windir%\system32"`<br>2. `icalcs.exe "%windir%\system32" /grant "%username%":F`<br>3. Rename cmd.exe to utilman.exe<br>4. Lock the console and press Win+U| Attack may be detected by some AV software.<br> <br>Alternative method relies on replacing service binaries stored in "Program Files" using the same privilege. |
 |`SeTcb`| ***Admin*** | 3rd party tool | Manipulate tokens to have local admin rights included. | Sample code+exe creating arbitrary tokens to be found at [PsBits](https://github.com/gtworek/PSBits/tree/master/VirtualAccounts). |
 |`SeTimeZone`| Mess | ***Built-in commands*** | Change the timezone. `tzutil /s "Chatham Islands Standard Time"` ||
-|`SeTrustedCredManAccess`| ? | ? | ? ||
+|`SeTrustedCredManAccess`| **Threat** | 3rd party tool | Dumping credentials from Credential Manager | Great [blog post](https://www.tiraniddo.dev/2021/05/dumping-stored-credentials-with.html) by [@tiraniddo](https://twitter.com/tiraniddo) |
 |`SeUndock`| None | - | - | The privilege is enabled when undocking, but never observed it checked to grant/deny access. In practice it means it is actually unused and cannot lead to any escalation. |
 |`SeUnsolicitedInput`| None | - | - | The privilege is not used in the Windows OS. |
 
